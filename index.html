@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. Gazi Sazzad Hossain | Physician &amp; Public Health Researcher</title>
   <meta name="description" content="Dr. Gazi Sazzad Hossain — Medical Affairs Professional and Aspiring Public Health Researcher. Clinical epidemiology, mental health and health communication.">
+  <meta name="theme-color" content="#0b5ed7">
+
+  <!-- Social sharing preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dr. Gazi Sazzad Hossain | Physician &amp; Public Health Researcher">
+  <meta property="og:description" content="A Physician working where clinical science, evidence and public health meet.">
+  <meta property="og:url" content="https://qvixgroup.github.io/medical-portfolio/">
+  <meta property="og:image" content="https://qvixgroup.github.io/medical-portfolio/images/profile.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Enables reveal animations only when JavaScript runs -->
+  <script>document.documentElement.classList.add("js");</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,10 +45,29 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
 
-      <form class="nav-search" role="search" onsubmit="return false;">
+      <form class="nav-search" role="search" id="site-search">
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         <input type="search" placeholder="Search..." aria-label="Search the site">
+        <span class="search-msg" role="status" aria-live="polite"></span>
       </form>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <form class="nav-search nav-search--mobile" role="search">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" placeholder="Search the site..." aria-label="Search the site">
+        <span class="search-msg" role="status" aria-live="polite"></span>
+      </form>
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About Me</a>
+      <a href="#work" class="nav-link">What I Do</a>
+      <a href="#highlights" class="nav-link">Highlights</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
   </nav>
 

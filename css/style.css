@@ -1347,3 +1347,128 @@ button { cursor: pointer; }
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links li:first-child { border-left: none; }
 }
+
+/* ==========================================================
+   POLISH (Phase 7)
+   ========================================================== */
+
+/* --- Search feedback --- */
+.nav-search { position: relative; }
+.search-msg {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 18px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #c62828;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.nav-search.no-results { animation: shake .4s; border-color: rgba(198, 40, 40, 0.5); }
+@keyframes shake {
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+.search-hit {
+  animation: search-hit 2.4s var(--ease);
+  border-radius: var(--radius);
+}
+@keyframes search-hit {
+  0%, 60% { box-shadow: 0 0 0 4px rgba(26, 115, 255, 0.55), 0 0 30px rgba(26, 115, 255, 0.35); }
+  100% { box-shadow: 0 0 0 0 rgba(26, 115, 255, 0); }
+}
+
+/* --- Hamburger button --- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 46px;
+  height: 46px;
+  margin-left: auto;
+  padding: 0 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #fff;
+  box-shadow: 0 4px 14px rgba(40, 90, 180, 0.12);
+}
+.nav-toggle span {
+  display: block;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--navy);
+  transition: transform .3s var(--ease), opacity .2s;
+}
+.menu-open .nav-toggle span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* --- Mobile menu panel --- */
+.mobile-menu {
+  position: absolute;
+  top: calc(var(--nav-h) - 6px);
+  left: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: rgba(244, 248, 255, 0.96);
+  border: 1px solid #fff;
+  box-shadow: 0 20px 40px rgba(40, 90, 180, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: menu-in .25s var(--ease);
+}
+.mobile-menu[hidden] { display: none; }
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+.mobile-menu .nav-link { padding: 12px 18px; border-radius: 14px; }
+.mobile-menu .nav-search--mobile { display: flex; width: 100%; margin-bottom: 10px; }
+.mobile-menu .nav-search--mobile:focus-within { width: 100%; }
+.menu-open { background: rgba(240, 246, 255, 0.9); }
+
+@media (max-width: 900px) {
+  .nav-links, .nav-search { display: none; }
+  .logo { border-right: none; }
+  .nav-toggle { display: flex; }
+}
+
+/* --- Reveal on scroll (only when JS is running) --- */
+/* Uses the `translate` property so it never fights card hover `transform`. */
+.js .reveal {
+  opacity: 0;
+  translate: 0 28px;
+  transition:
+    opacity .7s var(--ease) var(--delay, 0ms),
+    translate .7s var(--ease) var(--delay, 0ms),
+    transform .35s var(--ease),
+    box-shadow .35s var(--ease);
+}
+.js .reveal.is-visible { opacity: 1; translate: 0 0; }
+
+/* --- Small screens: tighter spacing --- */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .hero { padding-top: 10px; }
+  .hero-title { font-size: 2.4rem; }
+  .hero-tagline { font-size: 1rem; padding-left: 14px; }
+  .hero-eyebrow { font-size: 0.95rem; }
+  .hero-card { min-height: 100px; font-size: 0.98rem; }
+  .hero-actions .btn { flex: 1 1 100%; }
+  .heading-lg { font-size: 2.2rem; }
+  .section-tag::before, .section-tag::after { width: 28px; }
+  .section-tag { gap: 10px; font-size: 0.75rem; letter-spacing: 0.22em; }
+  .btn-lg { padding: 16px 32px; font-size: 1.05rem; }
+}
+
+/* --- Print: plain, readable --- */
+@media print {
+  .navbar, .bg-decor, .scroll-cue, .envelope, .hero-actions { display: none !important; }
+  body { background: #fff; }
+  .js .reveal { opacity: 1; translate: none; }
+}
