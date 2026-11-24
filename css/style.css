@@ -547,3 +547,180 @@ button { cursor: pointer; }
   .hero-info strong { font-size: 0.95rem; }
   .badge { width: 260px; }
 }
+
+/* ==========================================================
+   ABOUT (Phase 3)
+   ========================================================== */
+.about { padding: 110px 0 120px; overflow: hidden; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 540px) minmax(0, 1fr);
+  gap: 60px;
+  align-items: center;
+}
+
+/* --- Left: quote blob --- */
+.about-visual { display: flex; justify-content: center; }
+
+.quote-blob {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 540 / 620;
+  padding: 70px 60px 0 70px;
+  border-radius: 46% 54% 50% 50% / 38% 40% 60% 62%;
+  background:
+    radial-gradient(120% 80% at 30% 20%, rgba(255, 255, 255, 0.9), rgba(205, 225, 255, 0.55) 60%, rgba(170, 205, 255, 0.5));
+  border: 3px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 30px 60px rgba(40, 90, 180, 0.18),
+    0 0 0 14px rgba(255, 255, 255, 0.28),
+    inset 0 0 40px rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  isolation: isolate;
+}
+.quote-mark {
+  font-size: 2.6rem;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+.quote-blob blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.7rem, 2.6vw, 2.35rem);
+  line-height: 1.18;
+  color: var(--navy);
+  max-width: 360px;
+}
+.quote-blob blockquote em {
+  display: block;
+  color: var(--blue);
+}
+.quote-line {
+  display: block;
+  width: 76px;
+  height: 4px;
+  margin-top: 26px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue-bright));
+}
+.quote-skyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 38%;
+  object-fit: cover;
+  object-position: center 60%;
+  z-index: -1;
+  /* fade the photo into the glass at the top */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 35%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 35%);
+}
+
+/* --- Right: content --- */
+.about-content {
+  position: relative;
+  padding-left: 40px;
+  border-left: 1.5px solid rgba(11, 94, 215, 0.2);
+}
+.about-tag-wrap {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 0 0 40px -40px;
+  transform: translateY(-40px);
+  justify-content: flex-start;
+}
+.about-tag-wrap::before,
+.about-tag-wrap::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: var(--blue-dark);
+  opacity: 0.75;
+}
+
+/* outlined pill label */
+.pill-tag {
+  display: inline-block;
+  padding: 9px 34px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(11, 26, 74, 0.55);
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.about-content .heading-lg { font-size: clamp(2.6rem, 4.6vw, 4rem); margin-bottom: 26px; }
+
+.about-text {
+  font-size: 1.22rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--navy);
+  padding-left: 26px;
+  border-left: 4px solid var(--blue-bright);
+  border-image: linear-gradient(180deg, var(--blue-dark), #3ea0ff) 1;
+  max-width: 700px;
+  margin-bottom: 44px;
+}
+
+.about-points {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin-bottom: 46px;
+}
+.about-points li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 24px;
+  white-space: nowrap;
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--navy);
+  border-right: 1.5px solid rgba(11, 26, 74, 0.18);
+}
+.about-points li:first-child { padding-left: 0; }
+.about-points li:last-child { border-right: none; }
+
+.icon-box {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 66px;
+  height: 66px;
+  border-radius: 18px;
+  font-size: 1.7rem;
+  color: var(--blue);
+  background: linear-gradient(180deg, #fff, #eef4ff);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 20px rgba(40, 90, 180, 0.14);
+}
+
+.btn-lg { padding: 18px 46px; font-size: 1.2rem; }
+
+@media (max-width: 1100px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-content { padding-left: 0; border-left: none; }
+  .about-tag-wrap { margin: 0 0 24px; transform: none; justify-content: center; }
+  .about-visual { order: 1; }
+}
+@media (max-width: 760px) {
+  .about { padding: 70px 0; }
+  .quote-blob { padding: 50px 34px 0 40px; }
+  .about-points { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .about-points li { padding: 0; border-right: none; }
+  .about-text { font-size: 1.05rem; padding-left: 18px; }
+  .pill-tag { padding: 8px 22px; letter-spacing: 0.3em; }
+  .about-tag-wrap::before, .about-tag-wrap::after { width: 30px; }
+}
