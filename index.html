@@ -21,14 +21,119 @@
   <!-- Decorative background waves -->
   <div class="bg-decor" aria-hidden="true"></div>
 
-  <!-- Phase 2: Navbar + Hero -->
-  <header id="home" class="section">
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="Dr. Gazi Sazzad Hossain — Home">GS<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <form class="nav-search" role="search" onsubmit="return false;">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" placeholder="Search..." aria-label="Search the site">
+      </form>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header id="home" class="hero">
     <div class="container">
-      <span class="section-tag">Coming soon</span>
-      <h1 class="heading-xl">Dr. Gazi Sazzad <span class="accent">Hossain</span></h1>
-      <p class="lead">Phase 1 setup complete — sections will be added phase by phase.</p>
-      <a href="#about" class="btn btn-primary">Explore My Work <i class="fa-solid fa-arrow-right"></i></a>
-      <a href="#contact" class="btn btn-ghost"><i class="fa-regular fa-circle-play"></i> Watch Introduction</a>
+      <div class="hero-grid">
+
+        <!-- Left: intro -->
+        <div class="hero-content">
+          <p class="hero-eyebrow">Medical Affairs Professional <span class="dot">•</span> Aspiring Public Health Researcher</p>
+
+          <h1 class="hero-title">Dr. Gazi Sazzad <span class="accent">Hossain</span></h1>
+
+          <p class="hero-tagline">A Physician working where clinical science, evidence and public health meet.</p>
+
+          <div class="hero-cards">
+            <a href="#work" class="hero-card glass">
+              <i class="fa-solid fa-microscope"></i>
+              <span>Research</span>
+            </a>
+            <a href="#work" class="hero-card glass">
+              <i class="fa-solid fa-tv"></i>
+              <span>Health<br>Content</span>
+            </a>
+            <a href="#about" class="hero-card glass">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Academic<br>Journey</span>
+            </a>
+            <a href="#highlights" class="hero-card glass">
+              <i class="fa-regular fa-pen-to-square"></i>
+              <span>Blog</span>
+            </a>
+            <a href="#work" class="hero-card glass">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Professional<br>Experience</span>
+            </a>
+            <a href="#work" class="hero-card glass">
+              <i class="fa-solid fa-users"></i>
+              <span>Leadership &amp;<br>Volunteer Activity</span>
+            </a>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">Explore My Work <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#highlights" class="btn btn-ghost"><i class="fa-regular fa-circle-play"></i> Watch Introduction</a>
+          </div>
+        </div>
+
+        <!-- Right: ID badge with photo -->
+        <div class="hero-visual">
+          <div class="badge">
+            <div class="badge-lanyard" aria-hidden="true"></div>
+            <div class="badge-clip" aria-hidden="true"></div>
+            <div class="badge-card">
+              <div class="badge-slot" aria-hidden="true"></div>
+              <div class="badge-photo">
+                <img src="images/profile.jpg" alt="Portrait of Dr. Gazi Sazzad Hossain" width="250" height="345">
+              </div>
+            </div>
+            <div class="badge-orbit" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info strip -->
+      <ul class="hero-info glass">
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <strong>MBBS</strong>
+          <span>Kushtia Medical College</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-users"></i>
+          <strong>MPH (Ongoing)</strong>
+          <span>North South University</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-chart-simple"></i>
+          <strong>Junior Medical Advisor</strong>
+          <span>Servier Bangladesh Operations</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-layer-group"></i>
+          <strong>Research Interests</strong>
+          <span>Clinical Epidemiology · Mental Health</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-tower-broadcast"></i>
+          <strong>Health Communication</strong>
+          <span>Public Awareness &amp; Education</span>
+        </li>
+      </ul>
+
+      <a href="#about" class="scroll-cue">
+        Scroll to Explore
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </div>
   </header>
 

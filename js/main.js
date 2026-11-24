@@ -6,4 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
+
+  // Navbar gets a glass background once the page scrolls
+  const navbar = document.getElementById("navbar");
+  const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 10);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 });
